@@ -299,7 +299,7 @@ function generateAuthors() {
     // console.log(articleTagsArray);
     /* START LOOP: for each tag */
     /* generate HTML of the link */
-    const linkHTML = '<li><a href="#author-' + authorTags + '">' + authorTags + '</a></li>';
+    const linkHTML = '<a href="#author-' + authorTags + '">' + authorTags + '</a>';
     console.log(linkHTML);
     /* add generated code to html variable */
 
@@ -319,7 +319,8 @@ function generateAuthors() {
     
     for (let author in allAuthors) {
       // const authorLinkHTML = '<li><a href="#tag-' + author + '">' + author + ' ' + '(' + calculateAuthorClass(allAuthors[author], authorsParams) + ')' + '</a></li>' + ' '; 
-      const authorLinkHTML = '<li><a class="' + calculateAuthorClass(allAuthors[author], authorsParams) + '" href="#author-' + author + '">' + author + ' (' + allAuthors[author] + ')</a></li>';
+      // const authorLinkHTML = '<a class="' + optCloudClassPrefix + calculateAuthorClass(allAuthors[author], authorsParams) + '" href="#author-' + author + '">' + author + ' (' + allAuthors[author] + ')</a>';
+      const authorLinkHTML = '<li><a class="' + optCloudClassPrefix + calculateTagClass(allAuthors[author], authorsParams) + '" href="#author-' + author + '">' + author + ' (' + allAuthors[author] + ')</a></li>';
       // const authorLinkHTML = '<li><a href="#author-' + author + '">' + author + ' (' + allAuthors[author] + ') </a></li>'
       console.log(authorLinkHTML);
       allAuthorsHTML += authorLinkHTML;
